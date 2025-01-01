@@ -1,44 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/custom-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Outfit:wght@100..900&display=swap"
+    />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body class="d-flex">
+    <div class="m-0 p-0 mw-100 container">
+      <aside class="sidebar-nav z-3 collapsed">
+        <button type="button" class="btn p-3 close-sidebar-nav">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <ul class="p-2 navigation-list">
+          <li class="p-2 collections item">Collections</li>
+          <li class="p-2 men item">Men</li>
+          <li class="p-2 women item">Women</li>
+          <li class="p-2 about item">About</li>
+          <li class="p-2 contact item">Contact</li>
+        </ul>
+      </aside>
+      <main class="main z-n1 m-0 w-100">
+        <div class="container-fluid p-0 m-0">
+          <div class="navbar navbar-reverse fixed-top">
+            <button
+              class="navbar-toggler p-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navigation-list-card"
+              aria-expanded="false"
+              aria-controls="navigation-list-card"
+            >
+              <strong><span class="navbar-toggler-icon"></span></strong>
+            </button>
+            <a class="navbar-brand p-2 flex-grow-1" href="#">
+              <img src="./images/logo.svg" alt="sneakers company" /> </a
+            ><button type="button" class="basket btn" data-bs-toggle="button">
+              <img
+                src="./images/icon-cart.svg"
+                alt="basket"
+                class="img-fluid"
+              />
+            </button>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <div class="profile-icon p-2">
+              <img
+                src="./images/image-avatar.png"
+                alt="profile"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <section class="product">
+            <div class="product-image">
+              <img
+                src="./images/image-product-1.jpg"
+                alt="sneakers-1"
+                class="img-fluid"
+              />
+            </div>
+            <div class="product-details p-4">
+              <div class="product-brand">Sneaker Company</div>
+              <div class="product-name pt-2 pb-3">
+                Fall Limited Edition Sneakers
+              </div>
+              <div class="product-description pb-3">
+                These low-profile sneakers are your perfect casual wear
+                companion. Featuring a durable rubber outer sole, they’ll
+                withstand everything the weather can offer.
+              </div>
+              <div class="product-price d-flex">
+                <div class="product-price--current">$125.00</div>
+                <div class="product-price--promo"><span>50%</span></div>
+                <div class="ms-auto product-price--original">$250.00</div>
+              </div>
+              <div class="basket-calculator d-flex mt-3 mb-3">
+                <span class="p-3 text-center symbols plus-sign">+</span>
+                <span class="p-3 flex-grow-1 text-center quantity">0</span>
+                <span class="p-3 text-center symbols minus-sign">-</span>
+              </div>
+              <button class="p-3 rounded w-100 add-to-cart">
+                <span class="add-to-cart--icon"
+                  ><img src="./images/icon-cart.svg"
+                /></span>
+                <span class="add-to-cart--label">Add to Cart</span>
+              </button>
+              <div class="mobile-margin visible-xs"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
 </html>
+<script>
+  let closeSideBarToggleButton = document.querySelector(".close-sidebar-nav");
+  let navbarToggleButton = document.querySelector(".navbar-toggler");
+  let sidebarContainer = document.querySelector(".sidebar-nav");
+
+  function toggleSideBar() {
+    sidebarContainer.classList.toggle("open");
+  }
+  closeSideBarToggleButton.addEventListener("click", function () {
+    toggleSideBar();
+  });
+
+  navbarToggleButton.addEventListener("click", function () {
+    toggleSideBar();
+  });
+</script>
