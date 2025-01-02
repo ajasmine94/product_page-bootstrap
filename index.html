@@ -26,7 +26,7 @@
   </head>
   <body class="d-flex">
     <div class="m-0 p-0 mw-100 container">
-      <aside class="sidebar-nav z-3 collapsed">
+      <aside id="navigation-list-card" class="sidebar-nav z-3 collapsed">
         <button type="button" class="btn p-3 close-sidebar-nav">
           <i class="bi bi-x-lg"></i>
         </button>
@@ -70,12 +70,41 @@
             </div>
           </div>
           <section class="product">
-            <div class="product-image">
-              <img
-                src="./images/image-product-1.jpg"
-                alt="sneakers-1"
-                class="img-fluid"
-              />
+            <div id="product-images" class="product-image carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./images/image-product-1.jpg"
+                    alt="sneakers-1"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+
+              <div class="carousel-controls">
+                <a
+                  class="carousel-control-prev"
+                  href="#product-images"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#product-images"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </div>
             </div>
             <div class="product-details p-4">
               <div class="product-brand">Sneaker Company</div>
@@ -93,9 +122,9 @@
                 <div class="ms-auto product-price--original">$250.00</div>
               </div>
               <div class="basket-calculator d-flex mt-3 mb-3">
-                <span class="p-3 text-center symbols plus-sign">+</span>
-                <span class="p-3 flex-grow-1 text-center quantity">0</span>
                 <span class="p-3 text-center symbols minus-sign">-</span>
+                <span class="p-3 flex-grow-1 text-center quantity">0</span>
+                <span class="p-3 text-center symbols plus-sign">+</span>
               </div>
               <button class="p-3 rounded w-100 add-to-cart">
                 <span class="add-to-cart--icon"

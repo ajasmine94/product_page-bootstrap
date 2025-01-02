@@ -67,6 +67,34 @@ body {
   color: hsl(219, 9%, 45%);
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon,
+.carousel-control-prev-icon:active,
+.carousel-control-next-icon:active,
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: white;
+  background-size: 10px;
+  border-radius: 50%;
+  color: hsl(220, 13%, 13%);
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../images/icon-previous.svg");
+}
+
+.carousel-control-next-icon {
+  background-image: url("../images/icon-next.svg");
+}
+
+.carousel-control-prev {
+}
+
 .product-price {
   align-items: center;
   column-gap: 10px;
