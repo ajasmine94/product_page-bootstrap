@@ -25,7 +25,7 @@
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body class="d-flex">
-    <div class="m-0 p-0 mw-100 container">
+    <div class="container m-0 mx-md-5 p-0 mw-100">
       <aside id="navigation-list-card" class="sidebar-nav z-3 collapsed">
         <button type="button" class="btn p-3 close-sidebar-nav">
           <i class="bi bi-x-lg"></i>
@@ -38,11 +38,11 @@
           <li class="p-2 contact item">Contact</li>
         </ul>
       </aside>
-      <main class="main z-n1 m-0 w-100">
+      <main class="main z-n1 m-0 mx-md-5 w-100">
         <div class="container-fluid p-0 m-0">
-          <div class="navbar navbar-reverse fixed-top">
+          <div class="navbar navbar-reverse fixed-top px-md-5 px-lg-5">
             <button
-              class="navbar-toggler p-2"
+              class="navbar-toggler p-2 d-block d-sm-none"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navigation-list-card"
@@ -69,7 +69,7 @@
               />
             </div>
           </div>
-          <section class="product">
+          <section class="product d-md-inline-flex mt-md-5 pt-md-5">
             <div id="product-images" class="product-image carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -81,7 +81,7 @@
                 </div>
               </div>
 
-              <div class="carousel-controls">
+              <div class="carousel-controls d-sm-none">
                 <a
                   class="carousel-control-prev"
                   href="#product-images"
@@ -106,7 +106,7 @@
                 </a>
               </div>
             </div>
-            <div class="product-details p-4">
+            <div class="product-details p-4 m-md-5 p-md-5">
               <div class="product-brand">Sneaker Company</div>
               <div class="product-name pt-2 pb-3">
                 Fall Limited Edition Sneakers
@@ -116,22 +116,30 @@
                 companion. Featuring a durable rubber outer sole, they’ll
                 withstand everything the weather can offer.
               </div>
-              <div class="product-price d-flex">
+              <div class="product-price d-flex flex-row mx-md-2">
                 <div class="product-price--current">$125.00</div>
                 <div class="product-price--promo"><span>50%</span></div>
                 <div class="ms-auto product-price--original">$250.00</div>
               </div>
-              <div class="basket-calculator d-flex mt-3 mb-3">
-                <span class="p-3 text-center symbols minus-sign">-</span>
-                <span class="p-3 flex-grow-1 text-center quantity">0</span>
-                <span class="p-3 text-center symbols plus-sign">+</span>
+              <div
+                class="add-to-cart-container d-md-flex flex-column flex-md-row mt-md-4"
+              >
+                <div class="basket-calculator d-flex flex-row my-3 my-md-0">
+                  <span class="px-3 py-1 text-center symbols minus-sign"
+                    >-</span
+                  >
+                  <span class="px-3 py-1 flex-grow-1 text-center quantity"
+                    >0</span
+                  >
+                  <span class="px-3 py-1 text-center symbols plus-sign">+</span>
+                </div>
+                <button class="px-3 py-2 rounded w-100 add-to-cart mx-md-2">
+                  <span class="add-to-cart--icon"
+                    ><img src="./images/icon-cart.svg"
+                  /></span>
+                  <span class="add-to-cart--label">Add to Cart</span>
+                </button>
               </div>
-              <button class="p-3 rounded w-100 add-to-cart">
-                <span class="add-to-cart--icon"
-                  ><img src="./images/icon-cart.svg"
-                /></span>
-                <span class="add-to-cart--label">Add to Cart</span>
-              </button>
               <div class="mobile-margin visible-xs"></div>
             </div>
           </section>
