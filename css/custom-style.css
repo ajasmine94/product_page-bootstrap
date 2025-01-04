@@ -92,9 +92,6 @@ body {
   background-image: url("../images/icon-next.svg");
 }
 
-.carousel-control-prev {
-}
-
 .product-price {
   align-items: center;
   column-gap: 10px;
@@ -157,4 +154,14 @@ body {
 
 .mobile-margin {
   margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .product-price {
+    flex-wrap: wrap;
+  }
+
+  .product-price--original {
+    flex: 1 0 100%;
+  }
 }
