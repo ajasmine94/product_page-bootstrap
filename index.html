@@ -81,16 +81,16 @@
                 </div>
               </div> -->
               <div
-                class="carousel-indicators d-none d-md-flex align-content-between"
+                class="carousel-indicators d-none d-md-flex align-content-between rounded"
               >
                 <button
                   id="carousel-button-1"
                   type="button"
                   data-bs-target="#product-images"
                   data-bs-slide-to="0"
-                  class="active"
                   aria-current="true"
                   aria-label="Slide 1"
+                  class="active"
                 >
                   <img
                     src="./images/image-product-1.jpg"
@@ -104,10 +104,11 @@
                   data-bs-target="#product-images"
                   data-bs-slide-to="1"
                   aria-label="Slide 2"
+                  class="rounded-3"
                 >
                   <img
                     src="./images/image-product-2.jpg"
-                    alt="sneakers-2"
+                    alt="sneakers-2 rounded-3"
                     class="img-fluid d-block w-100"
                   />
                 </button>
@@ -117,6 +118,7 @@
                   data-bs-target="#product-images"
                   data-bs-slide-to="2"
                   aria-label="Slide 3"
+                  class="rounded-3"
                 >
                   <img
                     src="./images/image-product-3.jpg"
@@ -130,6 +132,7 @@
                   data-bs-target="#product-images"
                   data-bs-slide-to="3"
                   aria-label="Slide 4"
+                  class="rounded-3"
                 >
                   <img
                     src="./images/image-product-4.jpg"
@@ -138,7 +141,7 @@
                   />
                 </button>
               </div>
-              <div class="carousel-inner">
+              <div class="carousel-inner rounded-5">
                 <div class="carousel-item active">
                   <img
                     src="./images/image-product-1.jpg"
@@ -214,16 +217,22 @@
                 <div class="ms-auto product-price--original">$250.00</div>
               </div>
               <div
-                class="add-to-cart-container flex-column flex-wrap d-md-flex flex-md-row flex-md-nowrap mt-md-4"
+                class="add-to-cart-container flex-column flex-wrap gap-md-2 d-md-flex flex-md-row flex-md-nowrap mt-md-4"
               >
                 <div class="basket-calculator flex-row my-3 my-md-0">
-                  <span class="px-3 py-1 text-center symbols minus-sign"
-                    >-</span
+                  <button
+                    class="border-0 px-3 py-1 text-center symbols minus-sign"
                   >
+                    -
+                  </button>
                   <span class="px-3 py-1 flex-grow-1 text-center quantity"
                     >0</span
                   >
-                  <span class="px-3 py-1 text-center symbols plus-sign">+</span>
+                  <button
+                    class="border-0 px-3 py-1 text-center symbols plus-sign"
+                  >
+                    +
+                  </button>
                 </div>
                 <button class="px-3 py-2 rounded w-100 add-to-cart ml-md-2">
                   <span class="add-to-cart--icon"
@@ -255,5 +264,29 @@
 
   navbarToggleButton.addEventListener("click", function () {
     toggleSideBar();
+  });
+
+  /**
+   * This section is for the quantity field
+   **/
+
+  let plus_button = document.querySelector(".plus-sign");
+  let minus_button = document.querySelector(".minus-sign");
+  let quantity_field = document.querySelector(".quantity");
+
+  plus_button.addEventListener("click", function () {
+    let current_value = quantity_field.innerHTML;
+    let new_value = parseFloat(current_value) + 1;
+    quantity_field.innerHTML = new_value;
+  });
+
+  minus_button.addEventListener("click", function () {
+    let current_value = quantity_field.innerHTML;
+    let new_value = parseFloat(current_value) - 1;
+    if (current_value > 0) {
+      quantity_field.innerHTML = new_value;
+    } else {
+      quantity_field.innerHTML = current_value;
+    }
   });
 </script>

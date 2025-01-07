@@ -156,6 +156,10 @@ body {
   margin-bottom: 30px;
 }
 
+button.symbols {
+  background-color: inherit;
+}
+
 @media (min-width: 768px) {
   .product-price {
     flex-wrap: wrap;
