@@ -55,6 +55,7 @@ body {
 
 .navigation-list {
   list-style: none;
+  color: hsl(220, 13%, 13%);
 }
 
 .navigation-list .item {
