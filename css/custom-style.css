@@ -145,6 +145,7 @@ body {
 .add-to-cart--icon,
 .basket {
   padding: 5px 7.5px;
+  border: 0;
 }
 
 .add-to-cart--icon img,
@@ -159,6 +160,32 @@ body {
 
 button.symbols {
   background-color: inherit;
+}
+
+.header {
+  background: rgb(0, 178, 255);
+  color: #fff;
+}
+
+#cart-counter {
+  font-size: 10px;
+  background: hsl(26, 100%, 55%);
+  color: #fff;
+  padding: 0 6.5px;
+  vertical-align: top;
+  margin-left: -12px;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-width: 768px) {
