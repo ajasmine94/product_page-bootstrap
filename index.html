@@ -71,6 +71,7 @@
                 alt="basket"
                 class="img-fluid"
               />
+              <span class="badge hidden" id="cart-counter">0</span>
             </button>
             <div class="profile-icon p-2">
               <img
@@ -298,6 +299,23 @@
       quantity_field.innerHTML = new_value;
     } else {
       quantity_field.innerHTML = current_value;
+    }
+  });
+
+  /**
+   * This section is for displaying the badge on the cart
+   ***/
+
+  let cart_counter = document.querySelector(".badge");
+  let add_button = document.querySelector(".add-to-cart");
+
+  add_button.addEventListener("click", function () {
+    let current_quantity = parseFloat(quantity_field.innerHTML);
+    if (current_quantity > 0) {
+      cart_counter.innerHTML = current_quantity;
+      cart_counter.classList.remove("hidden");
+    } else {
+      cart_counter.classList.add("hidden");
     }
   });
 </script>
