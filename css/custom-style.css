@@ -205,4 +205,13 @@ button.symbols {
   .product-price--original {
     flex: 1 0 100%;
   }
+
+  ul.navigation-list > .item a {
+    text-decoration: none;
+    color: hsl(220, 13%, 13%);
+  }
+
+  ul.navigation-list .item:hover {
+    border-bottom: 5px solid hsl(26, 100%, 55%);
+  }
 }
