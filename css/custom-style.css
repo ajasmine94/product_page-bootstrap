@@ -68,6 +68,15 @@ body {
   color: hsl(219, 9%, 45%);
 }
 
+.carousel-inner {
+  width: 320px;
+  height: 320px;
+}
+
+.carousel-indicators {
+  position: relative;
+}
+
 .carousel-control-next,
 .carousel-control-prev {
   opacity: 1;
