@@ -11,7 +11,6 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -94,10 +93,9 @@
           <section class="product d-md-inline-flex mt-md-5 pt-md-5">
             <div
               id="product-images"
-              class="product-image carousel slide carousel-fade align-content-center"
-              data-bs-ride="carousel"
+              class="product-images carousel slide align-content-center"
             >
-              <div class="carousel-inner rounded-5">
+              <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img
                     src="./images/image-product-1.jpg"
@@ -127,10 +125,6 @@
                   />
                 </div>
               </div>
-
-              <!-- <div
-                class="carousel-indicators d-none d-md-flex align-content-between rounded"
-              > -->
               <div
                 class="carousel-indicators d-none d-md-flex align-content-between rounded"
               >
@@ -195,10 +189,11 @@
 
               <div class="carousel-controls d-sm-none">
                 <a
-                  class="carousel-control-prev"
+                  class="left carousel-control-prev"
                   href="#product-images"
                   role="button"
                   data-slide="prev"
+                  onclick="$('.product-images').carousel('prev'); return false;"
                 >
                   <span
                     class="carousel-control-prev-icon"
@@ -206,10 +201,11 @@
                   ></span>
                 </a>
                 <a
-                  class="carousel-control-next"
+                  class="right carousel-control-next"
                   href="#product-images"
                   role="button"
                   data-slide="next"
+                  onclick="$('.product-images').carousel('next'); return false;"
                 >
                   <span
                     class="carousel-control-next-icon"
@@ -268,7 +264,18 @@
         </div>
       </main>
     </div>
+    <div class="modal lightbox-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body align-self-center">
+            <div id="lightbox" class="lightbox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
 <script>
@@ -326,5 +333,24 @@
     } else {
       cart_counter.classList.add("hidden");
     }
+  });
+
+  /**
+   * For displaying the images on the lightbox
+   **/
+  let product_image_box = document.querySelector(".product-images");
+  let lightbox_modal = new bootstrap.Modal(
+    document.querySelector(".lightbox-modal")
+  );
+  let lightbox = document.querySelector(".lightbox");
+
+  product_image_box.addEventListener("click", function () {
+    let products      = document.querySelector(".product div:first-child");
+    lightbox.innerHTML = "";
+    lightbox.innerHTML = products.outerHTML;
+    
+    let carousel_control = document.querySelector("#lightbox .carousel-controls");
+    carousel_control.classList.remove('d-sm-none');
+    lightbox_modal.show();
   });
 </script>
