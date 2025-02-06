@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./css/custom-style.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Outfit:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Outfit:wght@100..900&display=swap"
     />
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
@@ -90,7 +90,7 @@
               />
             </div>
           </div>
-          <section class="product d-md-inline-flex mt-md-5 pt-md-5">
+          <section class="product d-md-inline-flex mt-0 mt-md-5 pt-md-5">
             <div
               id="product-images"
               class="product-images carousel slide align-content-center"
@@ -264,6 +264,33 @@
         </div>
       </main>
     </div>
+    <div class="modal basket-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            Cart
+          </div>
+          <div class="modal-body d-flex flex-row flex-nowrap">
+            <div class="product-image-icon align-self-center w-25">
+              <img 
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="sneakers-2 rounded-3"
+                class="d-block w-100">
+            </div>
+            <div class="flex-column w-75 flex-wrap px-3">
+                <div class="cart-text">
+                    Fall Limited Edition Sneakers
+                </div>
+                <div class="product-total cart-text ">
+                    $<span class="cart-product-price">125.00</span> x 
+                    <span class="cart-quantity"></span> 
+                    <span class="fw-bold">$</span><span class="fw-bold total-cart-amount"></span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal lightbox-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -319,20 +346,40 @@
   });
 
   /**
-   * This section is for displaying the badge on the cart
+   * This section is for displaying the badge on the cart and the computation on the basket modal
    ***/
 
   let cart_counter = document.querySelector(".badge");
   let add_button = document.querySelector(".add-to-cart");
+  let basket_button = document.querySelector(".basket");
+
+  let cart_quantity = document.querySelector(".cart-quantity");
+  let cart_price = document.querySelector('.cart-product-price');
+  let total_cart_amount = document.querySelector('.total-cart-amount');
+  
+  let cart_modal = new bootstrap.Modal(
+    document.querySelector(".basket-modal")
+  );
 
   add_button.addEventListener("click", function () {
     let current_quantity = parseFloat(quantity_field.innerHTML);
+    let current_price   = parseFloat(cart_price.innerHTML);
+    let total           = current_quantity * current_price;
     if (current_quantity > 0) {
-      cart_counter.innerHTML = current_quantity;
-      cart_counter.classList.remove("hidden");
+        cart_counter.innerHTML = current_quantity;
+        cart_counter.classList.remove("hidden");
+        
+        cart_quantity.innerHTML = current_quantity;
+        
+
+        total_cart_amount.innerHTML = parseFloat(total).toFixed(2);
     } else {
-      cart_counter.classList.add("hidden");
+        cart_counter.classList.add("hidden");
     }
+  });
+
+  basket_button.addEventListener("click", function() {
+    cart_modal.show();
   });
 
   /**

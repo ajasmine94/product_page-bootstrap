@@ -9,7 +9,7 @@ body {
   font-size: 1rem;
   font-family: "Kumbh Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -188,9 +188,21 @@ button.symbols {
   display: none;
 }
 
-.modal-content {
+.lightbox-modal div.modal-content {
   background: transparent;
   border: none;
+}
+
+.basket-modal .modal-dialog {
+  top: 4rem;
+}
+
+.cart-text {
+  font-size: 0.8rem;
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @media (min-width: 768px) {
@@ -219,5 +231,10 @@ button.symbols {
 
   ul.navigation-list .item:hover {
     border-bottom: 5px solid hsl(26, 100%, 55%);
+  }
+
+  .basket-modal .modal-dialog {
+    margin-right: 3rem;
+    top: 2rem;
   }
 }
