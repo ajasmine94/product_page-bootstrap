@@ -270,22 +270,31 @@
           <div class="modal-header">
             Cart
           </div>
-          <div class="modal-body d-flex flex-row flex-nowrap">
-            <div class="product-image-icon align-self-center w-25">
-              <img 
-                src="./images/image-product-2-thumbnail.jpg"
-                alt="sneakers-2 rounded-3"
-                class="d-block w-100">
+          <div class="modal-body">
+            <div class="basket-content basket-content-filled d-flex flex-row flex-nowrap">
+              <div class="product-image-icon align-self-center w-25">
+                <img 
+                  src="./images/image-product-2-thumbnail.jpg"
+                  alt="sneakers-2 rounded-3"
+                  class="d-block w-100">
+              </div>
+              <div class="flex-column w-75 flex-wrap px-3">
+                  <div class="cart-text">
+                      Fall Limited Edition Sneakers
+                  </div>
+                  <div class="product-total cart-text ">
+                      $<span class="cart-product-price">125.00</span> x 
+                      <span class="cart-quantity"></span> 
+                      <span class="fw-bold">$</span><span class="fw-bold total-cart-amount"></span>
+                  </div>
+              </div>
             </div>
-            <div class="flex-column w-75 flex-wrap px-3">
-                <div class="cart-text">
-                    Fall Limited Edition Sneakers
-                </div>
-                <div class="product-total cart-text ">
-                    $<span class="cart-product-price">125.00</span> x 
-                    <span class="cart-quantity"></span> 
-                    <span class="fw-bold">$</span><span class="fw-bold total-cart-amount"></span>
-                </div>
+          </div>
+          <div class="modal-body">
+            <div class=" d-flex flex-column basket-content basket-content-empty ">
+              <div class="cart-text p-5 align-self-center">
+                Your Cart is empty.
+              </div>
             </div>
           </div>
         </div>
@@ -352,6 +361,8 @@
   let cart_counter = document.querySelector(".badge");
   let add_button = document.querySelector(".add-to-cart");
   let basket_button = document.querySelector(".basket");
+  let basket_empty = document.querySelector('.basket-content-empty');
+  let basket_filled = document.querySelector('.basket-content-filled');
 
   let cart_quantity = document.querySelector(".cart-quantity");
   let cart_price = document.querySelector('.cart-product-price');
@@ -378,7 +389,19 @@
     }
   });
 
+  let checkIfEmpty = () => {
+    let current_quantity = parseFloat(quantity_field.innerHTML);
+    if(current_quantity > 0) {
+      basket_empty.closest('.modal-body').classList.add('hidden');
+      basket_filled.closest('.modal-body').classList.remove('hidden');
+    } else {
+      basket_empty.closest('.modal-body').classList.remove('hidden');
+      basket_filled.closest('.modal-body').classList.add('hidden');
+    }
+  }
+
   basket_button.addEventListener("click", function() {
+    checkIfEmpty();
     cart_modal.show();
   });
 

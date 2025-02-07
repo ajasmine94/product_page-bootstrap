@@ -205,6 +205,10 @@ button.symbols {
   font-style: normal;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 @media (min-width: 768px) {
   .product-price {
     flex-wrap: wrap;
