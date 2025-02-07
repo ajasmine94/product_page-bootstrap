@@ -25,8 +25,8 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/ajasmine94/product_page-bootstrap)
-- Live Site URL: [Add live site URL here](https://recipe-page-1031.netlify.app/)
+- Solution URL: [Git Hub Link](https://github.com/ajasmine94/product_page-bootstrap)
+- Live Site URL: [Live Site Link](https://e-commercepage-bootstrap.netlify.app)
 
 ## My process
 
