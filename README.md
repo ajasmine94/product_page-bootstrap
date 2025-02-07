@@ -16,11 +16,11 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 ![This is my version of the solution to the coding challenge for web view](./final/web-view.jpg)
 ![This is my version of the solution to the coding challenge for web view with added items on cart state](./final/web-view-cartcount.jpg)
-![This is my version of the solution to the coding challenge for web view with added items on cart, displayed state](./final/web-view-with items on cart.jpg)
+![web view with added items on cart when displayed state](./final/with-items-on-cart.jpg)
 ![This is my version of the solution to the coding challenge for web view with empy cart state](./final/web-view-cart-empty.jpg)
 ![This is my version of the solution to the coding challenge for mobile view](./final/mobile-view.jpg)
 ![This is my version of the solution to the coding challenge for mobile view with added items on cart state](./final/mobile-view-cartcount.jpg)
-![This is my version of the solution to the coding challenge for mobile view with added items on cart, displayed state](./final/mobile-view-with items on cart.jpg)
+![mobile view with added items on cart when displayed state](./final/mobile-view-with-items-on-cart.jpg)
 ![This is my version of the solution to the coding challenge for mobile view with empy cart state](./final/mobile-view-cart-empty.jpg)
 
 ### Links
